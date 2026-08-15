@@ -16,6 +16,70 @@ print(df.isnull().sum())
 print(df.isnull().sum().sum())
 print(df.duplicated().sum())
 
+# EXPLORATORY DATA ANALYSIS (EDA)
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 1. Price Distribution
+plt.figure(figsize=(8, 5))
+sns.histplot(df["Price"], kde=True)
+plt.title("Price Distribution")
+plt.xlabel("House Price")
+plt.ylabel("Frequency")
+plt.show()
+
+
+# 2. Average Area Income vs Price
+plt.figure(figsize=(8, 5))
+sns.scatterplot(x=df["Avg. Area Income"], y=df["Price"])
+plt.title("Average Area Income vs House Price")
+plt.xlabel("Average Area Income")
+plt.ylabel("House Price")
+plt.show()
+
+
+# 3. House Age vs Price
+plt.figure(figsize=(8, 5))
+sns.scatterplot(x=df["Avg. Area House Age"], y=df["Price"])
+plt.title("Average Area House Age vs House Price")
+plt.xlabel("Average Area House Age")
+plt.ylabel("House Price")
+plt.show()
+
+
+# 4. Number of Rooms vs Price
+plt.figure(figsize=(8, 5))
+sns.scatterplot(x=df["Avg. Area Number of Rooms"], y=df["Price"])
+plt.title("Number of Rooms vs House Price")
+plt.xlabel("Average Area Number of Rooms")
+plt.ylabel("House Price")
+plt.show()
+
+# 5. Correlation Heatmap
+plt.figure(figsize=(10, 7))
+
+numeric_df = df.select_dtypes(include="number")
+
+sns.heatmap(
+    numeric_df.corr(),
+    annot=True,
+    cmap="coolwarm",
+    fmt=".2f"
+)
+
+plt.title("Correlation Heatmap")
+plt.show()
+
+
+# 6. Boxplot for Price
+plt.figure(figsize=(8, 5))
+sns.boxplot(y=df["Price"])
+plt.title("Boxplot of House Price")
+plt.ylabel("House Price")
+plt.show()
+
+
 X = df.drop(['Price', 'Address'], axis=1)
 y = df['Price']
 
