@@ -5,7 +5,7 @@ A Machine Learning-based web application that predicts house prices using **Line
 ## 🚀 Live Demo
 
 **Streamlit App:**
-https://house-price-predictor.streamlit.app/
+https://house-price-predictior.streamlit.app/
 
 ## 📌 Project Overview
 
@@ -197,7 +197,7 @@ The application will open in your browser.
 The application is deployed using **Streamlit Community Cloud**.
 
 **Live Application:**
-https://house-price-predictor.streamlit.app/
+https://house-price-predictior.streamlit.app/
 
 ## 🔗 Project Repository
 
